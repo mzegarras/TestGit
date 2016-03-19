@@ -12,6 +12,39 @@ android {
         versionName "1.0"
     }
 
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+    }
+    signingConfigs {
+        release {
+            storeFile file('/Proyectos/Proyectos Old/Lindley/Key/m-sonic.net.keystore')
+            storePassword 'nicoleupc1234567890'
+            keyAlias 'm-sonic.net'
+            keyPassword 'nicoleupc1234567890'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+
+        /* applicationVariants.all { variant ->
+             variant.outputs.each { output ->
+                 def apk = output.outputFile;
+                 def newName = "BancaMovil-" + variant.baseName.replace("-release", "") + "-" + defaultConfig.versionName + ".apk";
+                 output.outputFile = new File(apk.parentFile, newName);
+             }
+         }*/
+
+    }
+
     productFlavors {
         def SPRINT = '"Y16SP2"'
 
