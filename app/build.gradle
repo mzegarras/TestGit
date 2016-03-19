@@ -29,11 +29,11 @@ android {
         release {
             minifyEnabled false
             //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+            signingConfig signingConfigs.release
         }
-        debug {
+        /*debug {
             signingConfig signingConfigs.config
-        }
+        }*/
 
         /* applicationVariants.all { variant ->
              variant.outputs.each { output ->
@@ -51,7 +51,7 @@ android {
         deployStore {
             minSdkVersion 14
             applicationId 'net.msonic.testgit'
-            signingConfig signingConfigs.config
+            signingConfig signingConfigs.release
             targetSdkVersion 23
             versionCode defaultConfig.versionCode
             versionName defaultConfig.versionName
