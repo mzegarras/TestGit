@@ -45,59 +45,7 @@ android {
 
     }
 
-    productFlavors {
-        def SPRINT = '"Y16SP2"'
 
-        deployStore {
-            minSdkVersion 14
-            applicationId 'net.msonic.testgit'
-            signingConfig signingConfigs.release
-            targetSdkVersion 23
-            versionCode defaultConfig.versionCode
-            versionName defaultConfig.versionName
-
-
-
-            def INITIAL = '"PROD"'
-            def COMPILED_NUMBER = '"3"'
-
-            buildConfigField 'String', 'SPRINT', SPRINT
-            buildConfigField 'String', 'INITIAL', INITIAL
-            buildConfigField 'String', 'COMPILED_NUMBER', COMPILED_NUMBER
-
-            def SPRINT_1 = SPRINT.replace('"', '')
-            def INITIAL_1 = INITIAL.replace('"', '')
-            def COMPILED_NUMBER_1 = COMPILED_NUMBER.replace('"', '')
-
-            archivesBaseName = "TestGit-$SPRINT_1" + "v" + "$COMPILED_NUMBER_1$INITIAL_1"
-
-        }
-
-        telework {
-            minSdkVersion 14
-            applicationId 'net.msonic.testgit1'
-            signingConfig signingConfigs.release
-            targetSdkVersion 23
-            versionCode defaultConfig.versionCode
-            versionName defaultConfig.versionName
-
-
-
-            def INITIAL = '"TELE"'
-            def COMPILED_NUMBER = '"3"'
-
-            buildConfigField 'String', 'SPRINT', SPRINT
-            buildConfigField 'String', 'INITIAL', INITIAL
-            buildConfigField 'String', 'COMPILED_NUMBER', COMPILED_NUMBER
-
-            def SPRINT_1 = SPRINT.replace('"', '')
-            def INITIAL_1 = INITIAL.replace('"', '')
-            def COMPILED_NUMBER_1 = COMPILED_NUMBER.replace('"', '')
-
-            archivesBaseName = "TELE-$SPRINT_1" + "v" + "$COMPILED_NUMBER_1$INITIAL_1"
-
-        }
-    }
 
     buildTypes {
         release {
